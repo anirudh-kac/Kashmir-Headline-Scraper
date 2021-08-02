@@ -4,12 +4,11 @@ from datetime import date
 from csv import writer
 BASE_URL = "https://www.greaterkashmir.com/collection/top-stories"
 
-driver = webdriver.Firefox()
-
 def scraper():
+    driver = webdriver.Firefox()
     driver.get(BASE_URL)
     soup = BeautifulSoup(driver.page_source,"html5lib")
-
+    driver.close()
     headlines = soup.find_all('h6')
 
     filename = str(date.today())
