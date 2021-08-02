@@ -12,7 +12,6 @@ def scraper():
 
     headlines = soup.find_all('h6')
 
-    print(headlines)
     filename = str(date.today())
 
     file = open("./archives/greater_kashmir/" + filename + ".csv",'w')
