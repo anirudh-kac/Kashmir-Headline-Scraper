@@ -13,5 +13,14 @@ def scraper():
     driver.close()
     headlines = soup.find_all('h2',class_= "headline")
 
+    filename = str(date.today())
+
+    file = open("./archives/rising_kashmir/" + filename + ".csv",'w')
+    csv_writer = writer(file)
+
     for headline in headlines:
-        print(headline.get_text().)
+        print(headline.get_text().strip())
+        csv_writer.writerow([headline.get_text().strip()])
+        print("---------------------------------------------")
+
+    file.close()

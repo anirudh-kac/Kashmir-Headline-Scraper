@@ -16,7 +16,7 @@ def scraper():
     file = open("./archives/greater_kashmir/" + filename + ".csv",'w')
     csv_writer = writer(file)
     for headline in headlines:
-        csv_writer.writerow([headline.get_text()])
+        csv_writer.writerow([headline.get_text().strip()])
         print(headline.get_text())
         print()
         print("-------------------------------------------------------------------------")
